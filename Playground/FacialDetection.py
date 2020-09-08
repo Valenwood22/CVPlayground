@@ -1,7 +1,7 @@
 import cv2
 
 faceCascade = cv2.CascadeClassifier("Resources/haarcascade_frontalface_default.xml")
-img = cv2.imread("Resources/Fishing.jpg")
+img = cv2.imread("../Resources/Fishing.jpg")
 imagGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 faces = faceCascade.detectMultiScale(imagGray,1.1,4)

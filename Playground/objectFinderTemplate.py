@@ -3,7 +3,7 @@ import cv2
 #########################################
 frameWidth = 820
 frameHeight = 600
-object = cv2.CascadeClassifier("Resources/hand.xml")
+object = cv2.CascadeClassifier("Resources/haarcascade_frontalface_default.xml")
 minArea = 500
 color = (255,255,255)
 #########################################
