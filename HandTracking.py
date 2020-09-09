@@ -40,10 +40,10 @@ class power_perceive:
                 hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
                 # define range of skin color in HSV
-                lower_skin = np.array([0, 16, 103], dtype=np.uint8)
-                upper_skin = np.array([59, 95, 168], dtype=np.uint8)
+                lower_skin = np.array([2, 31, 9], dtype=np.uint8)
+                upper_skin = np.array([28, 140, 225], dtype=np.uint8)
 
-                # extract skin colur imagw
+                # extract skin colur imag
                 mask = cv2.inRange(hsv, lower_skin, upper_skin)
 
                 # extrapolate the hand to fill dark spots within
@@ -119,7 +119,7 @@ class power_perceive:
                         if arearatio < 12:
                             cv2.putText(frame, '0', (0, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
                         elif arearatio < 17.5:
-                            cv2.putText(frame, 'Best of luck', (0, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
+                            cv2.putText(frame, '', (0, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
 
                         else:
                             cv2.putText(frame, '1', (0, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
