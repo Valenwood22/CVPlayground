@@ -1,4 +1,4 @@
 # CVPlayground
 The Main project is HandTracker.py
 
-The playground directory has examples to refer to
+The playground directory has examples
