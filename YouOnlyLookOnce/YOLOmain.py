@@ -1,16 +1,20 @@
 import cv2
 import numpy as np
+# hand Data set https://lttm.dei.unipd.it/downloads/gesture/
 
 # Load YOLO
-net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
+net = cv2.dnn.readNet("yolov3_training_last.weights", "yolov3.cfg")
 
-with open("coco.names", "r") as f:
+
+
+with open("handv1.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
 layer_names = net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
+
 # Loading image
-img = cv2.imread("data/depositphotos_378396456-stock-photo-profile-side-view-closeup-human.jpg")
+img = cv2.imread("data/family.png")
 # img = cv2.resize(img, None, fx=0.4, fy=0.4) # Resize the image to fit on the screen
 height, width, channels = img.shape
 
