@@ -1,3 +1,9 @@
+__authors__ = ["Joshua Gisi"]
+__copyright__ = ""
+__version__ = "Experimental"
+__email__ = "Joshua.Gisi@ndus.edu"
+__status__ = "Development"
+
 import cv2
 import numpy as np
 # hand Data set https://lttm.dei.unipd.it/downloads/gesture/
