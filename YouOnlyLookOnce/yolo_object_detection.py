@@ -30,7 +30,7 @@ classes = ["RH_Zero","RH_One","RH_Two","RH_Three","RH_Four","RH_Five",]
 
 # Images path
 images_path = glob.glob(r"C:\Users\treeb\OneDrive\Desktop\images\*jpg")
-
+# C:\Users\treeb\OneDrive\Desktop\images\*jpg
 # Unseen data: r"C:\Users\treeb\OneDrive\Pictures\Camera Roll\hand_five\*.jpg"
 # Training data: r"C:\Users\treeb\OneDrive\Desktop\SampleHand DataSet\*.png"
 
