@@ -4,18 +4,6 @@ __version__ = "Experimental"
 __email__ = "Joshua.Gisi@ndus.edu"
 __status__ = "Development"
 
-'''
-                    =========== Experiment Notes 10/18/2020 ============
-1. This script is currently using the weights from the hand_five data set using 118 images
-2. It was trained online using google Colaboratory, Average loss < 0.4, ~2.5  hours of training
-3. Results are promising but far from perfect. 99.15% accuracy on training data (sample size of 118), 
-   37.5% accuracy on unseen data (sample size of 16)
-4. What we need to do going forward
-    a. Collect a larger data set minimum 400 images per gesture
-    b. Train it longer on Colaboratory full 12 hours, Average loss < 0.01
-    c. Collect a larger set of unseen data minimum 100 images per gesture
-    d. Settings like score_threshold, nms_threshold, and confidence threshold can be adjusted and optimized
-'''
 
 import cv2
 import numpy as np
@@ -29,7 +17,7 @@ net = cv2.dnn.readNet("yolo-obj_last.weights", "yolo-obj.cfg")
 classes = ["RH_Zero","RH_One","RH_Two","RH_Three","RH_Four","RH_Five",]
 
 # Images path
-images_path = glob.glob(r"C:\Users\treeb\OneDrive\Desktop\images\*jpg")
+images_path = glob.glob(r"C:\Users\treeb\OneDrive\Pictures\Camera Roll\hand_five\*.jpg")
 # C:\Users\treeb\OneDrive\Desktop\images\*jpg
 # Unseen data: r"C:\Users\treeb\OneDrive\Pictures\Camera Roll\hand_five\*.jpg"
 # Training data: r"C:\Users\treeb\OneDrive\Desktop\SampleHand DataSet\*.png"
@@ -44,7 +32,7 @@ random.shuffle(images_path)
 for img_path in images_path:
     # Loading image
     img = cv2.imread(img_path)
-    img = cv2.resize(img, None, fx=0.2, fy=0.2)
+    img = cv2.resize(img, None, fx=1, fy=1)
     height, width, channels = img.shape
 
     # Detecting objects
@@ -64,7 +52,6 @@ for img_path in images_path:
             confidence = scores[class_id]
             if confidence > 0.3:
                 # Object detected
-                print(class_id)
                 center_x = int(detection[0] * width)
                 center_y = int(detection[1] * height)
                 w = int(detection[2] * width)
