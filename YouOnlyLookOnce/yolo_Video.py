@@ -149,8 +149,8 @@ if __name__ == '__main__':
     output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
     colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
-    # cap = cv2.VideoCapture(0)
-    cap = open_cam_onboard(args.image_width, args.image_height)
+    cap = cv2.VideoCapture(0)
+    # cap = open_cam_onboard(args.image_width, args.image_height)
     # cap.set(3, 1280) # Screen size
     # cap.set(4,1024) # Screen size
     # cap.set(10,100) # Brightness
