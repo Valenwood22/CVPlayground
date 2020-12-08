@@ -11,6 +11,7 @@ import glob
 import random
 import sys
 import argparse
+import subprocess
 
 WINDOW_NAME = 'SD2016 Hand Gesture Recognition'
 
